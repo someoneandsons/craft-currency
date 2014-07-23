@@ -25,8 +25,8 @@ Convert currencies in Craft CMS.
 
 The currency plugin works well with the currency filter built into Craft.
 
-	{# Converts 42 Icelandic krona to Danish kroner, and formats it using currency filter. #}
-	{{ craft.currency.conversion('ISK', 'DKK', 42)|currency('DKK') }}
+	{# Converts 426 Icelandic krona to Danish kroner, and formats it using currency filter. #}
+	{{ craft.currency.conversion('ISK', 'DKK', 426)|currency('DKK') }}
 
 ###### Result
 
