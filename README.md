@@ -4,8 +4,8 @@ Convert currencies in Craft CMS.
 
 ## Usage
 
-* `from_currency`: 3 letter currency symbol (defaults to `EUR`)
-* `to_currency`: 3 letter currency symbol (defaults to `USD`)
+* `from_currency`: 3 letter currency symbol (defaults to `'EUR'`)
+* `to_currency`: 3 letter currency symbol (defaults to `'USD'`)
 * `amount`: amount in from_currency to convert from (defaults to `1`)
 
 ***
