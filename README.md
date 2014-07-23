@@ -8,6 +8,7 @@ Convert currencies in Craft CMS.
 * `to_currency`: 3 letter currency symbol (defaults to `USD`)
 * `amount`: amount in from_currency to convert from (defaults to `1`)
 
+***
 
 	{{ craft.currency.conversion(from_currency, to_currency, amount) }}
 
