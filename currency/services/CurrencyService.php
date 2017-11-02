@@ -15,12 +15,14 @@ class CurrencyService extends BaseApplicationComponent
 			return $amount * file_get_contents($cache);
 		}
 		
-		$url = '/d/quotes.csv?s='.$from.$to.'=X&f=l1';
-        $client = new \Guzzle\Http\Client('http://download.finance.yahoo.com');
+		$url = '/latest?base='.$from.'&symbols='.$to;
+        $client = new \Guzzle\Http\Client('http://api.fixer.io');
         $response = $client->get($url)->send();
 
         if ($response->isSuccessful()) {
-        	$exchange = trim($response->getBody());
+        	$responseBody = json_decode(trim($response->getBody()));
+        	
+        	$exchange = (property_exists($responseBody->rates, $to))? $responseBody->rates->$to: 1;
         	
         	file_put_contents($cache, $exchange);
         	
