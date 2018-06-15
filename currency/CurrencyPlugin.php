@@ -22,4 +22,19 @@ class CurrencyPlugin extends BasePlugin
     {
         return 'http://someoneandsons.net';
     }
+    
+    protected function defineSettings()
+    {
+        return array(
+            'accessKey' => array(AttributeType::String, 'required' => true, 'default' => ''),
+            'https' => array(AttributeType::Bool, 'default' => ''),
+        );
+    }
+
+    public function getSettingsHtml()
+    {
+        return craft()->templates->render('currency/_settings', array(
+            'settings' => $this->getSettings()
+        ));
+    }
 }

@@ -15,8 +15,10 @@ class CurrencyService extends BaseApplicationComponent
 			return $amount * file_get_contents($cache);
 		}
 		
-		$url = '/latest?base='.$from.'&symbols='.$to;
-        $client = new \Guzzle\Http\Client('http://api.fixer.io');
+		$settings = craft()->plugins->getPlugin('currency')->getSettings();
+		
+		$url = '/latest?base='.$from.'&symbols='.$to.'&access_key='.$settings['accessKey'];
+        $client = new \Guzzle\Http\Client('http'.($settings['https'] ? 's' : '').'://data.fixer.io/api');
         $response = $client->get($url)->send();
 
         if ($response->isSuccessful()) {

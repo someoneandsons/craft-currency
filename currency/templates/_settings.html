@@ -1,0 +1,19 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    first: true,
+    label: "Access Key"|t,
+    name: 'accessKey',
+    instructions: "Enter your access key for the Fixer API in this field"|t,
+    required: true,
+    value: settings.accessKey,
+    errors: settings.getErrors('accessKey')
+}) }}
+
+{{ forms.lightswitchField({
+    label: "Use HTTPS"|t,
+    name: 'https',
+    instructions: "Whether API requests should be made using HTTPS instead of HTTP"|t,
+    on: settings.https,
+    errors: settings.getErrors('https')
+}) }}
