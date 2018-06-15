@@ -1,6 +1,6 @@
 # Craft Currency
 
-Convert currencies in Craft CMS.
+Convert currencies in Craft CMS 2.
 
 ## Set-up
 
