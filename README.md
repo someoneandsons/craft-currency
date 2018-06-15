@@ -2,6 +2,12 @@
 
 Convert currencies in Craft CMS.
 
+## Set-up
+
+The plugin uses the [fixer.io](https://fixer.io) API for currency conversions. The service requires an access key to be provided, which can be acquired for free from the website.
+
+Paid plans also have the option to specify requests are made over HTTPS, and the plugin settings add the ability to enable this option also.
+
 ## Usage
 
 * `from_currency`: 3 letter currency symbol (defaults to `'EUR'`)
